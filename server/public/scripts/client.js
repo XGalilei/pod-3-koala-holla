@@ -38,3 +38,24 @@ function saveKoala( newKoala ){
   // ajax call to server to get koalas
  
 }
+
+
+// get the koalas from the db
+// check if ready to transfer true
+// if false add a 'ready to transfer' button
+// ready to transfer button on click 
+// updates the ready to transfer to true
+// and removes the button from the DOM
+// 
+
+function isReadyToTransfer(){
+  //const koalaTransfer = response.ready_for_transfer
+  $.ajax({
+    method: 'GET',
+    url: '/koala'
+  }).then(function (response) {
+      $('#viewKoalas').append(`<button class="transfer-button>Ready for Transfer</button>`) 
+  }).catch(function (error) {
+    console.log('Error in changing status', error);
+  })
+}

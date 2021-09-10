@@ -32,12 +32,13 @@ function getKoalas(){
   // ajax call to server to get koalas
   $.ajax({
     method: 'GET',
-    url: '/koalas',
-  }).then( function ( response ){
+    url: '/koalas'
+  }).then(function(response) {
+    console.log(response);
     // TODO Call function to append koalas to DOM here
-  }).catch( function ( error ) {
+  }).catch(function(error) {
     console.log('Error in GET getKoalas, ', error);
-  });
+  })
 } // end getKoalas
 
 function saveKoala( newKoala ){

@@ -38,7 +38,7 @@ koalaRouter.post('/', (req, res) => {
 
 // Get for button call
 
-router.get('/', (req,res) => {
+koalaRouter.get('/', (req,res) => {
     const queryText =  `SELECT * FROM "koala";`;
     pool.query(queryText).then(result => {
         res.send(result.rows);

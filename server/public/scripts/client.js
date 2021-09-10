@@ -10,7 +10,7 @@ $( document ).ready( function(){
 }); // end doc ready
 
 function setupClickListeners() {
-  
+  $('#viewKoalas').on('click', '.transfer-button', readyForTransfer);
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
     // get user input and put in an object
@@ -72,6 +72,8 @@ function readyForTransfer() {
   }).then(function(response) {
     console.log('change readyforTransfer');
     getKoalas();
+  }).catch((error) => {
+    console.log('There was an error changing transfer status');
   });
 }
 

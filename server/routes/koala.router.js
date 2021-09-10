@@ -3,7 +3,7 @@ const express = require('express');
 const koalaRouter = express.Router();
 
 // DB CONNECTION
-
+const pool = require('../modules/pool');
 
 // GET
 
@@ -48,6 +48,21 @@ router.get('/', (req,res) => {
 })
 
 // PUT
+/**
+ * 
+ *  
+ */
+koalaRouter.put('/:id', (req, res) => {
+    console.log(req.params);
+    const koalaId = req.params.id;
+    const queryText = 'UPDATE "koala" SET "ready_for_transfer" WHERE "id" = $1;';
+    pool.query(queryText, [koalaId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error updating transfer', error);
+        res.sendStatus(500);
+    })
+});
 
 
 // DELETE

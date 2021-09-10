@@ -56,3 +56,15 @@ function saveKoala( newKoala ){
     alert( 'error posting koalas' );
   });
 }
+
+// readyForTransfer PUT function
+// Ready for transfer will be a boolean value
+// We will also base the Mark for Transfer Button
+// off of this being true or false
+
+
+// appendKoalas function
+// Will be called by the getKoalas function
+// pass in koala as an argument,
+// empty Koalas list
+// Append Koalas in a list to the DOM in a for loop

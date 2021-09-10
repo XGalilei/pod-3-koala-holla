@@ -86,14 +86,15 @@ function appendKoalas(response) {
     let buttonText = koala.ready_for_transfer ? '' :
     `<button class = "transfer-button" data-id = ${koala.id}>
         Ready for Transfer
-    </button>`;
+    </button>`; // Adds a "Ready for Transfer" button if the koala is 
+    //marked as not ready to transfer
     $('#viewKoalas').append(`<tr>
       <td>${koala.name}</td>
       <td>${koala.age}</td>
       <td>${koala.gender}</td>
       <td>${koala.ready_for_transfer}</td>
       <td>${koala.notes}</td>
-      ${buttonText}
+      <td>${buttonText}</td>
     </tr>`);
   }
 }

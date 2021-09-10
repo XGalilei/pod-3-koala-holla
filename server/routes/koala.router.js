@@ -40,8 +40,9 @@ router.post('/', (req, res) => {
 // PUT
 /**
  * 
+ *  
  */
- router.put('/:id', (req, res) => {
+koalaRouter.put('/:id', (req, res) => {
     console.log(req.params);
     const koalaId = req.params.id;
     const queryText = 'UPDATE "koala" SET "ready_for_transfer" WHERE "id" = $1;';

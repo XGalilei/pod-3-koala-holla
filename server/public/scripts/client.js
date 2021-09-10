@@ -36,6 +36,7 @@ function getKoalas(){
   }).then(function(response) {
     console.log(response);
     // TODO Call function to append koalas to DOM here
+    appendKoalas(response);
   }).catch(function(error) {
     console.log('Error in GET getKoalas, ', error);
   })
@@ -68,3 +69,15 @@ function saveKoala( newKoala ){
 // pass in koala as an argument,
 // empty Koalas list
 // Append Koalas in a list to the DOM in a for loop
+function appendKoalas(response) {
+  $('#viewKoalas').empty();
+  for(let koala of response) {
+    $('#viewKoalas').append(`<tr>
+      <td>${koala.name}</td>
+      <td>${koala.age}</td>
+      <td>${koala.gender}</td>
+      <td>${koala.ready_for_transfer}</td>
+      <td>${koala.notes}</td>
+    </tr>`);
+  }
+}

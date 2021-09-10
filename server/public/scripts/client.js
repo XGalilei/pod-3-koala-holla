@@ -40,33 +40,6 @@ function saveKoala( newKoala ){
 }
 
 
-// get the koalas from the db
-// check if ready to transfer true
-// (might make more sense to add the if 
-// statement in the initial appending 
-// to the DOM)
-// if false add a 'ready to transfer' button
-// ready to transfer button on click 
-// updates the ready to transfer to true
-// and removes the button from the DOM
-//  
-// here should do a PUT method
-// to update the database on button click
-//
-
-// function isReadyToTransfer(){
-//   //const koalaTransfer = response.ready_for_transfer
-//   $.ajax({
-//     method: 'GET',
-//     url: '/koala'
-//   }).then(function (response) {
-  
-//   }).catch(function (error) {
-//     console.log('Error in changing status', error);
-//   })
-// console.log( 'js' );
-// }
-
 $( document ).ready( function(){
   console.log( 'JQ' );
   // Establish Click Listeners

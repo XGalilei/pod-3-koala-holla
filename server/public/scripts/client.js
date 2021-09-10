@@ -3,13 +3,14 @@ console.log( 'js' );
 $( document ).ready( function(){
   console.log( 'JQ' );
   // Establish Click Listeners
-  setupClickListeners()
+  setupClickListeners();
   // load existing koalas on page load
   getKoalas();
 
 }); // end doc ready
 
 function setupClickListeners() {
+  $('#viewKoalas').on('click', '.transfer-button', readyForTransfer);
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
     // get user input and put in an object
@@ -31,7 +32,7 @@ function getKoalas(){
   console.log( 'in getKoalas' );
   // ajax call to server to get koalas
   $.ajax({
-    method: 'GET',
+    type: 'GET',
     url: '/koalas'
   }).then(function(response) {
     console.log(response);
@@ -67,10 +68,12 @@ function readyForTransfer() {
   // ^ NOTE: dependent on assigning id to transfer button: 
   $.ajax({
     method: 'PUT',
-    url: `/koala/${koalaId}`
+    url: `/koalas/${koalaId}`
   }).then(function(response) {
     console.log('change readyforTransfer');
     getKoalas();
+  }).catch((error) => {
+    console.log('There was an error changing transfer status');
   });
 }
 

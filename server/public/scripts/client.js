@@ -36,6 +36,7 @@ function getKoalas(){
   }).then(function(response) {
     console.log(response);
     // TODO Call function to append koalas to DOM here
+    appendKoalas(response);
   }).catch(function(error) {
     console.log('Error in GET getKoalas, ', error);
   })

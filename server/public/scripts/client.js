@@ -31,6 +31,19 @@ function getKoalas(){
   console.log( 'in getKoalas' );
   // ajax call to server to get koalas
   $.ajax({
+    method: 'GET',
+    url: '/koalas',
+  }).then( function ( response ){
+    // TODO Call function to append koalas to DOM here
+  }).catch( function ( error ) {
+    console.log('Error in GET getKoalas, ', error);
+  });
+} // end getKoalas
+
+function saveKoala( newKoala ){
+  console.log( 'in saveKoala', newKoala );
+  // ajax call to server to get koalas
+  $.ajax({
     method: 'POST',
     url: '/koalas',
     data: newKoala
@@ -40,11 +53,5 @@ function getKoalas(){
   }).catch( function ( error ) {
     console.log( error );
     alert( 'error posting koalas' );
-  })
-} // end getKoalas
-
-function saveKoala( newKoala ){
-  console.log( 'in saveKoala', newKoala );
-  // ajax call to server to get koalas
- 
+  });
 }

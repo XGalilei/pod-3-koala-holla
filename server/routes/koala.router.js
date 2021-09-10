@@ -11,7 +11,7 @@ const pool = require('../modules/pool');
 // POST
 // Post koala to the database from user inputs
 
-router.post('/', (req, res) => {
+koalaRouter.post('/', (req, res) => {
     const koalaToAdd = req.body;
     // test that is relayed to the database
     const queryText =  
@@ -36,6 +36,16 @@ router.post('/', (req, res) => {
     })
 })
 
+// Get for button call
+
+koalaRouter.get('/', (req,res) => {
+    const queryText =  `SELECT * FROM "koala";`;
+    pool.query(queryText).then(result => {
+        res.send(result.rows);
+    }).catch(error => {
+        res.sendStatus(500);
+    })
+})
 
 // PUT
 /**

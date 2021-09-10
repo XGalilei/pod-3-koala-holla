@@ -62,6 +62,17 @@ function saveKoala( newKoala ){
 // Ready for transfer will be a boolean value
 // We will also base the Mark for Transfer Button
 // off of this being true or false
+function readyForTransfer() {
+  const koalaId = $(this).data('id');
+  // ^ NOTE: dependent on assigning id to transfer button: 
+  $.ajax({
+    method: 'PUT',
+    url: `/koala/${koalaId}`
+  }).then(function(response) {
+    console.log('change readyforTransfer');
+    getKoalas();
+  });
+}
 
 
 // appendKoalas function

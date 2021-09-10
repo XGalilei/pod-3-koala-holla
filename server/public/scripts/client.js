@@ -54,17 +54,18 @@ function saveKoala( newKoala ){
 // to update the database on button click
 //
 
-function isReadyToTransfer(){
-  //const koalaTransfer = response.ready_for_transfer
-  $.ajax({
-    method: 'GET',
-    url: '/koala'
-  }).then(function (response) {
+// function isReadyToTransfer(){
+//   //const koalaTransfer = response.ready_for_transfer
+//   $.ajax({
+//     method: 'GET',
+//     url: '/koala'
+//   }).then(function (response) {
   
-  }).catch(function (error) {
-    console.log('Error in changing status', error);
-  })
-console.log( 'js' );
+//   }).catch(function (error) {
+//     console.log('Error in changing status', error);
+//   })
+// console.log( 'js' );
+// }
 
 $( document ).ready( function(){
   console.log( 'JQ' );
